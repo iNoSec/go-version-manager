@@ -1,0 +1,11 @@
+#!/bin/bash
+gov7=$(cat ~/.zshrc | grep -F1 ebowla |grep go- | cut -f2 -d"=" | cut -f5 -d"/") 
+gov10=$(cat ~/.zshrc | grep -F1 gopath |grep go- | cut -f2 -d"=" | cut -f4 -d"/")
+
+if [[ $gov10 == "go-1.10" ]];then
+    echo $gov10
+else
+    echo $gov7
+fi
+#echo "go version changed to $(cat ~/.zshrc | grep -F1 gopath |grep go- | cut -f2 -d"=" | cut -f4 -d"/")" && echo "go version changed to $(cat ~/.zshrc | grep -F1 ebowla |grep go- | cut -f2 -d"=" | cut -f5 -d"/")" 
+

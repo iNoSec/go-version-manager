@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Changing go version to $1"
+mv ~/.zshrc /tmp/.zshrc_go
+mv ~/.zshrc_go ~/.zshrc
+mv /tmp/.zshrc_go ~/.zshrc_go
+if [ $1 == 1.10 ];then
+    echo "go version changed to $(cat ~/.zshrc | grep -F1 gopath |grep go- | cut -f2 -d"=" | cut -f4 -d"/")" 
+    echo "you must make zshr before using it"
+else
+    echo "go version changed to $(cat ~/.zshrc | grep -F1 ebowla |grep go- | cut -f2 -d"=" | cut -f5 -d"/")" 
+    echo "you must make zshr before using it"
+fi
